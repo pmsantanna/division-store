@@ -1,0 +1,579 @@
+.produto-vitrine {
+  background-color: #0a0a0a;
+  min-height: 100vh;
+  padding-top: 40px;
+}
+
+.card {
+  background-color: #121212;
+  border: 1px solid #1f1f1f;
+  border-radius: 12px;
+  color: #fff;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+}
+
+.card-img-top {
+  height: 230px;
+  object-fit: cover;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.card-title {
+  font-size: 1rem;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: #f8f8f8;
+}
+
+.card-text {
+  font-size: 0.9rem;
+  color: #bbbbbb !important;
+  line-height: 1.4;
+  text-shadow: 0 0 2px #000 !important;
+}
+
+.card-footer p {
+  font-size: 1rem;
+  color: #4cc9f0 !important;
+}
+
+.btn-outline-light {
+  border-color: #666;
+  color: #ddd;
+}
+
+.btn-outline-light:hover {
+  background-color: #ffffff;
+  color: #000;
+}
+
+/* Glow individual por peça */
+/* .card.moletom {
+  border: 2px solid #9b5de5;
+  animation: glitch-border 1.5s infinite ease-in-out;
+} */
+
+.card.moletom {
+  border: 1px solid #9b5de5;
+  animation: glitch-border 2.5s infinite ease-in-out;
+  box-shadow: 0 0 6px #9b5de544;
+}
+
+.card.camiseta {
+  border-color: #ffffff22;
+  box-shadow: 0 0 8px 1px #ffffff33;
+}
+
+.card.calca {
+  border-color: #00ffe522;
+  box-shadow: 0 0 8px 1px #00ffe533;
+}
+
+.card.camisa {
+  border-color: #f7258522;
+  box-shadow: 0 0 8px 1px #f7258533;
+}
+
+.banner-principal {
+  background: url("/assets/img/banner-cybertribal.png") center center / cover
+    no-repeat;
+  height: 80vh;
+  min-height: 500px;
+  padding: 60px 20px;
+  background-color: #0a0a0a;
+  position: relative;
+}
+
+/* .banner-principal::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.6) 70%, rgba(0,0,0,0.9) 100%);
+  z-index: 1;
+} */
+
+.banner-principal::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 1));
+  /* background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.85) 0%,
+    rgba(0, 0, 0, 0.4) 60%,
+    rgba(0, 0, 0, 0.9) 100%
+  ); */
+}
+
+/* .banner-principal::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    135deg,
+    rgba(0, 0, 0, 0.75) 0%,
+    rgba(255, 0, 255, 0.1) 40%,
+    rgba(0, 255, 255, 0.1) 60%,
+    rgba(0, 0, 0, 0.75) 100%
+  );
+  z-index: 1;
+  mix-blend-mode: overlay;
+} */
+
+/* .banner-principal::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(
+    ellipse at bottom,
+    rgba(255, 255, 255, 0.03) 0%,
+    rgba(0, 0, 0, 0.85) 60%,
+    rgba(0, 0, 0, 0.95) 100%
+  );
+  z-index: 1;
+} */
+
+.banner-principal .container {
+  position: relative;
+  z-index: 2;
+}
+
+.text-glitch {
+  color: #fff;
+  text-shadow: 1px 0 #f72585, -1px 0 #00ffe5;
+  animation: flicker 2s infinite alternate;
+}
+
+.banner-principal::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 1200px;
+  height: 1200px;
+  background: url("/assets/img/tribal-seal.svg") center center / contain
+    no-repeat;
+  transform: translate(-50%, -50%);
+  opacity: 0.9;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.rito-button {
+  position: relative;
+  display: inline-block;
+  padding: 0.8rem 2.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #fff;
+  background-color: transparent;
+  border: 2px solid #ffffff;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  overflow: hidden;
+  text-decoration: none;
+  z-index: 2;
+}
+
+.rito-button::before {
+  content: "";
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  right: 2px;
+  bottom: 2px;
+  border: 1px dashed rgba(255, 255, 255, 0.5);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.rito-button:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+  box-shadow: 0 0 5px rgba(255, 255, 255, 0.4),
+    0 0 15px rgba(255, 255, 255, 0.2);
+}
+
+.rito-button-glow {
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.3) 50%,
+    transparent 100%
+  );
+  animation: buttonGlow 2s infinite linear;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 0;
+}
+
+.rito-button:hover .rito-button-glow {
+  opacity: 1;
+}
+
+@keyframes buttonGlow {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+.rito-button-glitch {
+  position: relative;
+  display: inline-block;
+  padding: 0.8rem 2.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #fff;
+  border: 2px solid #fff;
+  background-color: transparent;
+  overflow: hidden;
+  z-index: 1;
+  transition: background 0.3s ease;
+}
+
+.rito-button-glitch:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+  box-shadow: 0 0 6px rgba(255, 0, 255, 0.4), 0 0 10px rgba(0, 255, 255, 0.3);
+}
+
+.glitch-border {
+  content: "";
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  pointer-events: none;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  animation: glitchBorder 0.7s infinite;
+  clip-path: polygon(
+    0% 0%,
+    100% 0%,
+    100% 15%,
+    85% 15%,
+    85% 30%,
+    100% 30%,
+    100% 100%,
+    0% 100%,
+    0% 85%,
+    15% 85%,
+    15% 70%,
+    0% 70%
+  );
+  z-index: 0;
+}
+
+@keyframes glitchBorder {
+  0% {
+    transform: translate(0, 0);
+    opacity: 0.3;
+  }
+  20% {
+    transform: translate(2px, -2px);
+    opacity: 0.6;
+  }
+  40% {
+    transform: translate(-1px, 1px);
+    opacity: 0.4;
+  }
+  60% {
+    transform: translate(1px, -1px);
+    opacity: 0.7;
+  }
+  80% {
+    transform: translate(-2px, 2px);
+    opacity: 0.5;
+  }
+  100% {
+    transform: translate(0, 0);
+    opacity: 0.3;
+  }
+}
+
+.rito-button-strong-glitch {
+  position: relative;
+  text-decoration: none;
+  display: inline-block;
+  padding: 0.8rem 2.5rem;
+  font-size: 1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: #fff;
+  background-color: transparent;
+  border: 2px solid #fff;
+  overflow: hidden;
+  z-index: 1;
+  transition: background 0.3s ease;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+}
+
+.rito-button-strong-glitch:hover {
+  background-color: rgba(255, 255, 255, 0.08);
+  box-shadow: 0 0 8px rgba(255, 0, 255, 0.5), 0 0 12px rgba(0, 255, 255, 0.4),
+    0 0 24px rgba(255, 255, 255, 0.2);
+}
+
+.glitch-strong-border {
+  content: "";
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  pointer-events: none;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  z-index: 0;
+  animation: glitchStrong 0.1s infinite;
+  clip-path: polygon(
+    0% 0%,
+    100% 0%,
+    100% 15%,
+    85% 15%,
+    85% 30%,
+    100% 30%,
+    100% 100%,
+    0% 100%,
+    0% 85%,
+    15% 85%,
+    15% 70%,
+    0% 70%
+  );
+}
+
+@keyframes glitchStrong {
+  0% {
+    transform: translate(0, 0) scale(1);
+    opacity: 0.2;
+  }
+  25% {
+    transform: translate(3px, -2px) scale(1.02);
+    opacity: 0.5;
+  }
+  50% {
+    transform: translate(-2px, 1px) scale(0.98);
+    opacity: 0.4;
+  }
+  75% {
+    transform: translate(2px, 2px) scale(1.03);
+    opacity: 0.6;
+  }
+  100% {
+    transform: translate(0, 0) scale(1);
+    opacity: 0.3;
+  }
+}
+
+@keyframes rotateSlow {
+  from {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+.banner-principal::after {
+  animation: rotateSlow 60s linear infinite;
+}
+
+.banner-principal {
+  position: relative;
+  overflow: hidden;
+}
+
+.banner-principal .container {
+  position: relative;
+  z-index: 2;
+}
+
+.ritual-titulo {
+  font-family: "Orbitron", sans-serif;
+  font-size: clamp(3rem, 6vw, 6rem);
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #fff;
+  margin-bottom: 1.2rem;
+  text-shadow: 0 0 8px rgba(255, 0, 255, 0.25), 0 0 3px rgba(0, 255, 255, 0.2);
+}
+
+.ritual-frase {
+  font-size: clamp(1.1rem, 2vw, 1.5rem);
+  color: #ccc;
+  max-width: 800px;
+  margin: 0 auto 0.5rem;
+  line-height: 1.6;
+}
+
+.ritual-mantra {
+  font-size: clamp(0.9rem, 1.5vw, 1.1rem);
+  font-style: italic;
+  color: #aaa;
+  margin-bottom: 2rem;
+}
+
+.btn-ritual {
+  font-size: 1rem;
+  padding: 0.75rem 2rem;
+  border: 1px solid #888;
+  color: #fff;
+  background-color: transparent;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+}
+
+.btn-ritual:hover {
+  background-color: #fff;
+  color: #000;
+}
+
+.banner-principal .container > * {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeUp 0.8s ease forwards;
+}
+
+.ritual-titulo {
+  animation-delay: 0s;
+}
+
+.ritual-frase {
+  animation-delay: 0.3s;
+}
+
+.ritual-mantra {
+  animation-delay: 0.6s;
+}
+
+.btn-ritual {
+  animation-delay: 0.9s;
+}
+
+.fade-element {
+  opacity: 0;
+  transform: translateY(20px);
+  animation-fill-mode: both;
+}
+
+.animar.fade-delay-0 {
+  animation: fadeUp 0.8s ease forwards;
+  animation-delay: 0s;
+}
+
+.animar.fade-delay-1 {
+  animation: fadeUp 0.8s ease forwards;
+  animation-delay: 0.3s;
+}
+
+.animar.fade-delay-2 {
+  animation: fadeUp 0.8s ease forwards;
+  animation-delay: 0.6s;
+}
+
+.animar.fade-delay-3 {
+  animation: fadeUp 0.8s ease forwards;
+  animation-delay: 0.9s;
+}
+
+.ritual-sub {
+  font-size: clamp(1.1rem, 2.2vw, 1.5rem);
+  color: #cfcfcf;
+  font-weight: 500;
+  max-width: 700px;
+  margin: 1rem auto 0.5rem;
+  line-height: 1.6;
+  text-shadow: 0 0 3px rgba(0, 0, 0, 0.4);
+}
+
+.ritual-mantra {
+  font-size: clamp(1rem, 1.8vw, 1.2rem);
+  color: #aaaaaa;
+  font-style: italic;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+  margin-top: 0.3rem;
+  text-shadow: 0 0 2px rgba(0, 0, 0, 0.3);
+}
+
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes glitch-fade {
+  0% {
+    text-shadow: 0 0 8px rgba(255, 0, 255, 0.3), 0 0 2px rgba(0, 255, 255, 0.2);
+  }
+  50% {
+    text-shadow: 0 0 12px rgba(255, 0, 255, 0.15),
+      0 0 6px rgba(0, 255, 255, 0.1);
+  }
+  100% {
+    text-shadow: 0 0 5px rgba(255, 0, 255, 0.25), 0 0 3px rgba(0, 255, 255, 0.1);
+  }
+}
+
+@keyframes flicker {
+  0% {
+    text-shadow: 1px 0 #f72585, -1px 0 #00ffe5;
+  }
+  50% {
+    text-shadow: 2px 0 #ff00ff, -2px 0 #00ffe5;
+  }
+  100% {
+    text-shadow: 1px 0 #f72585, -1px 0 #00ffe5;
+  }
+}
+
+@keyframes glitch-border {
+  0% {
+    box-shadow: 0 0 10px #9b5de5, 0 0 0 transparent;
+  }
+  20% {
+    box-shadow: 0 0 15px #9b5de5, -2px 2px 0 #ff00ff33;
+  }
+  40% {
+    box-shadow: 0 0 12px #9b5de5, 2px -2px 0 #00ffe533;
+  }
+  60% {
+    box-shadow: 0 0 20px #9b5de5, -1px 1px 0 #ff00ff55;
+  }
+  80% {
+    box-shadow: 0 0 15px #9b5de5, 1px -1px 0 #00ffe555;
+  }
+  100% {
+    box-shadow: 0 0 10px #9b5de5, 0 0 0 transparent;
+  }
+}

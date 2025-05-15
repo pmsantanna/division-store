@@ -1,0 +1,10 @@
+.jumbotron {
+  background: linear-gradient(135deg, #f8f9fa, #e3e3e3);
+  border: 1px solid #ddd;
+}
+
+.btn-dark:hover {
+  background-color: #343a40;
+  transform: scale(1.05);
+  transition: all 0.3s ease-in-out;
+}
