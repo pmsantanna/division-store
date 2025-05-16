@@ -1,11 +1,12 @@
 import { Component, AfterViewInit, Renderer2 } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FeedbackComponent } from '../../components/feedback/feedback.component.spec';
+import { FooterComponent } from '../../components/footer/footer.component';
 
 @Component({
   selector: 'app-produtos',
   standalone: true,
-  imports: [CommonModule, FeedbackComponent],
+  imports: [CommonModule, FeedbackComponent, FooterComponent],
   templateUrl: './produtos.component.html',
   styleUrls: ['./produtos.component.css'],
 })
