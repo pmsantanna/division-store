@@ -6,7 +6,8 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "deploy:pages:ssr": "ng build --configuration production && rimraf docs-temp && xcopy /E /I /Y docs\\browser docs-temp && rimraf docs && mkdir docs && xcopy /E /I /Y docs-temp docs && rimraf docs-temp && git add . && git commit -m \"deploy: GitHub Pages (SSR)\" && git push"
   },
   "private": true,
   "dependencies": {
@@ -35,6 +36,7 @@
     "karma-coverage": "~2.2.0",
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.1.0",
+    "rimraf": "^6.0.1",
     "typescript": "~5.7.2"
   }
 }
