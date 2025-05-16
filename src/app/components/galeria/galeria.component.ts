@@ -4,6 +4,7 @@ import {
   ElementRef,
   ViewChild,
   HostListener,
+  ChangeDetectorRef,
 } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
@@ -38,6 +39,15 @@ export class GaleriaComponent implements AfterViewInit {
     'assets/img/galeria-09.png',
     'assets/img/galeria-10.png',
   ];
+
+  constructor(private cdr: ChangeDetectorRef) {}
+
+  ngOnInit(): void {
+    setTimeout(() => {
+      this.imagensLateral = [...this.imagensLateral, ...this.imagensLateral];
+      this.cdr.detectChanges();
+    }, 0);
+  }
 
   imagensDuplicadas: string[] = [];
 
