@@ -5,15 +5,19 @@
     <div class="galeria-composicao">
 
       <div class="galeria-principal">
-        <img *ngFor="let img of imagensPrincipais" [src]="img" class="galeria-img grande" />
+        <img *ngFor="let img of imagensPrincipais" [src]="img" class="galeria-img grande" (click)="abrirImagem(img)" />
       </div>
 
       <div class="galeria-lateral" #slider (mouseenter)="hoverAtivo = true" (mouseleave)="hoverAtivo = false">
         <ng-container *ngFor="let img of imagensDuplicadas">
-          <img [src]="img" class="galeria-img pequena" />
+          <!-- <img [src]="img" class="galeria-img pequena" /> -->
+          <img *ngFor="let img of imagensLateral" [src]="img" class="galeria-img pequena" (click)="abrirImagem(img)" />
         </ng-container>
       </div>
 
+      <!-- Lightbox -->
+      <app-image-viewer *ngIf="imagemSelecionada" [imagemAtual]="imagemSelecionada" [imagens]="todasImagens" (fechar)="fecharViewer()">
+      </app-image-viewer>
 
     </div>
   </div>

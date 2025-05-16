@@ -7,16 +7,21 @@ import {
   ChangeDetectorRef,
 } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { ImageViewerComponent } from '../../components/image-viewer/image-viewer.component';
 
 @Component({
   selector: 'app-galeria',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, ImageViewerComponent],
   templateUrl: './galeria.component.html',
   styleUrls: ['./galeria.component.css'],
 })
 export class GaleriaComponent implements AfterViewInit {
   @ViewChild('slider') sliderRef!: ElementRef<HTMLDivElement>;
+
+  todasImagens: string[] = [];
+
+  imagemSelecionada: string | null = null;
 
   imagensPrincipais = [
     'assets/img/galeria-01.png',
@@ -43,10 +48,7 @@ export class GaleriaComponent implements AfterViewInit {
   constructor(private cdr: ChangeDetectorRef) {}
 
   ngOnInit(): void {
-    setTimeout(() => {
-      this.imagensLateral = [...this.imagensLateral, ...this.imagensLateral];
-      this.cdr.detectChanges();
-    }, 0);
+    this.todasImagens = [...this.imagensPrincipais, ...this.imagensLateral];
   }
 
   imagensDuplicadas: string[] = [];
@@ -84,5 +86,13 @@ export class GaleriaComponent implements AfterViewInit {
     };
 
     animar();
+  }
+
+  abrirImagem(imagem: string) {
+    this.imagemSelecionada = imagem;
+  }
+
+  fecharViewer() {
+    this.imagemSelecionada = null;
   }
 }
