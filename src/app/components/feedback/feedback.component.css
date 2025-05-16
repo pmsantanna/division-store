@@ -1,0 +1,159 @@
+.feedback-section {
+  background: #f8f4ed;
+  color: #111;
+  padding: 4rem 2rem;
+  font-family: "Space Mono", monospace;
+}
+
+.section-title {
+  position: relative;
+  display: inline-block;
+  font-size: 1.8rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  color: #111;
+  padding-right: 2rem;
+}
+
+.feedback-title {
+  position: relative;
+  font-size: 2rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  margin-bottom: 2rem;
+  /* border-bottom: 1px solid #111; */
+  display: inline-block;
+}
+
+.feedback-title::before {
+  content: "";
+  position: absolute;
+  top: 48%;
+  left: 100%;
+  height: 3px;
+  width: 100%;
+  background-color: #d1d1d1;
+  transform: translateY(-50%);
+  margin-left: 20px;
+  z-index: 0;
+}
+
+.feedback-title::after {
+  content: "";
+  position: absolute;
+  top: calc(50% - 2px);
+  left: 100%;
+  height: 3px;
+  width: 20%;
+  background-color: #111;
+  margin-left: 20px;
+  z-index: 1;
+}
+
+.feedback-list {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.feedback-card {
+  background: #fff;
+  border-radius: 0.75rem;
+  max-width: 600px;
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  padding: 0.75rem;
+  box-shadow: 0 0 0 1px #e0e0e0;
+}
+
+.feedback-img {
+  width: 220px;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 0.3rem;
+}
+
+.feedback-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.feedback-meta {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  color: #222;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
+.stars {
+  letter-spacing: 2px;
+}
+
+.feedback-headline {
+  font-size: 1rem;
+  font-weight: 700;
+  margin: 0;
+  margin-top: -2.75rem;
+}
+
+.feedback-text {
+  font-size: 0.9rem;
+  margin: 0.5rem 0;
+  color: #444;
+}
+
+.feedback-user {
+  display: flex;
+  flex: 0 auto;
+  width: 100%;
+  padding-left: 0.5rem;
+  margin-bottom: 0.25rem;
+  justify-content: space-between;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  align-self: flex-end;
+  margin-right: 0.5rem;
+  font-weight: 500;
+  color: #111;
+}
+
+.date {
+  margin-right: 0.5rem;
+}
+
+.star {
+  font-size: 1.2rem;
+  color: #111;
+  letter-spacing: 1px;
+}
+
+.star.full {
+  color: #000;
+  text-shadow: 0 0 3px rgba(255, 0, 255, 0.3), 0 0 2px rgba(0, 255, 255, 0.3);
+}
+
+.star.half {
+  color: #666;
+}
+
+.feedback-img-wrapper {
+  position: relative;
+  border: 2px solid transparent;
+  padding: 4px;
+}
+
+.feedback-img-wrapper::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url("/assets/img/ritual-digital-frame.svg") center/cover no-repeat;
+  opacity: 0.3;
+  z-index: 2;
+  pointer-events: none;
+}

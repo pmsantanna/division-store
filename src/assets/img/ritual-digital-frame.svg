@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Filtro para efeito de glitch digital -->
+    <filter id="glitchFilter" x="-10%" y="-10%" width="120%" height="120%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.02" numOctaves="1" result="noise" seed="10"/>
+      <feDisplacementMap in="SourceGraphic" in2="noise" scale="10" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+    
+    <!-- Filtro para distorção digital mais forte -->
+    <filter id="strongGlitch" x="-10%" y="-10%" width="120%" height="120%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.05" numOctaves="3" result="noise" seed="5"/>
+      <feDisplacementMap in="SourceGraphic" in2="noise" scale="15" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+    
+    <!-- Filtro para ruído estático digital -->
+    <filter id="staticNoise" x="0%" y="0%" width="100%" height="100%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.75" numOctaves="3" result="noise" seed="3"/>
+      <feComponentTransfer in="noise" result="adjusted">
+        <feFuncR type="linear" slope="0.2" intercept="0"/>
+        <feFuncG type="linear" slope="0.2" intercept="0"/>
+        <feFuncB type="linear" slope="0.2" intercept="0"/>
+        <feFuncA type="linear" slope="0.3" intercept="0"/>
+      </feComponentTransfer>
+      <feComposite operator="in" in="adjusted" in2="SourceGraphic"/>
+    </filter>
+    
+    <!-- Filtro para efeito de falha horizontal -->
+    <filter id="scanlines" x="0%" y="0%" width="100%" height="100%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.001 0.15" numOctaves="2" seed="0" result="noise"/>
+      <feColorMatrix type="matrix" values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0.15 0" in="noise" result="colorNoise"/>
+      <feComposite operator="arithmetic" k1="0" k2="1" k3="1" k4="0" in="SourceGraphic" in2="colorNoise" result="result"/>
+    </filter>
+    
+    <!-- Padrão para linhas de código -->
+    <pattern id="codePattern" width="100" height="100" patternUnits="userSpaceOnUse">
+      <rect width="100" height="100" fill="none"/>
+      <text x="0" y="10" font-family="monospace" font-size="8" fill="white" fill-opacity="0.1">01001110</text>
+      <text x="0" y="20" font-family="monospace" font-size="8" fill="white" fill-opacity="0.1">10100101</text>
+      <text x="0" y="30" font-family="monospace" font-size="8" fill="white" fill-opacity="0.1">01011010</text>
+      <text x="0" y="40" font-family="monospace" font-size="8" fill="white" fill-opacity="0.1">11001001</text>
+      <text x="0" y="50" font-family="monospace" font-size="8" fill="white" fill-opacity="0.1">01101001</text>
+      <text x="0" y="60" font-family="monospace" font-size="8" fill="white" fill-opacity="0.1">10111000</text>
+      <text x="0" y="70" font-family="monospace" font-size="8" fill="white" fill-opacity="0.1">11100110</text>
+      <text x="0" y="80" font-family="monospace" font-size="8" fill="white" fill-opacity="0.1">00101101</text>
+      <text x="0" y="90" font-family="monospace" font-size="8" fill="white" fill-opacity="0.1">10101011</text>
+      <text x="0" y="100" font-family="monospace" font-size="8" fill="white" fill-opacity="0.1">01110101</text>
+    </pattern>
+  </defs>
+  
+  <!-- Fundo transparente -->
+  <rect width="1024" height="1024" fill="none"/>
+  
+  <!-- Elementos de moldura - Canto Superior Esquerdo -->
+  <g opacity="0.8" filter="url(#glitchFilter)">
+    <!-- Elemento principal do canto -->
+    <path d="M40,40 L150,40 L40,150 Z" fill="none" stroke="white" stroke-width="1.5" stroke-opacity="0.15"/>
+    
+    <!-- Runa interna -->
+    <path d="M60,60 L120,60 L90,90 Z" fill="none" stroke="white" stroke-width="1" stroke-opacity="0.2"/>
+    
+    <!-- Linhas de código rúnico -->
+    <path d="M40,180 L40,300 M50,180 L50,280 M60,180 L60,260" fill="none" stroke="white" stroke-width="0.8" stroke-opacity="0.1" stroke-dasharray="5,3,1,3"/>
+    
+    <!-- Elementos geométricos -->
+    <circle cx="90" cy="90" r="20" fill="none" stroke="white" stroke-width="0.5" stroke-opacity="0.15"/>
+    <circle cx="90" cy="90" r="10" fill="none" stroke="white" stroke-width="0.5" stroke-opacity="0.2"/>
+    
+    <!-- Extensão horizontal -->
+    <path d="M150,40 L300,40 M150,50 L280,50 M150,60 L260,60" fill="none" stroke="white" stroke-width="0.5" stroke-opacity="0.1" stroke-dasharray="10,5,2,5"/>
+    
+    <!-- Glitch fragmentado -->
+    <path d="M70,40 L100,15 L130,40" fill="none" stroke="white" stroke-width="0.8" stroke-opacity="0.15" filter="url(#strongGlitch)"/>
+  </g>
+  
+  <!-- Elementos de moldura - Canto Superior Direito -->
+  <g opacity="0.8" filter="url(#glitchFilter)" transform="translate(1024,0) scale(-1,1)">
+    <!-- Elemento principal do canto -->
+    <path d="M40,40 L150,40 L40,150 Z" fill="none" stroke="white" stroke-width="1.5" stroke-opacity="0.15"/>
+    
+    <!-- Runa interna -->
+    <path d="M60,60 L120,60 L90,90 Z" fill="none" stroke="white" stroke-width="1" stroke-opacity="0.2"/>
+    
+    <!-- Linhas de código rúnico -->
+    <path d="M40,180 L40,300 M50,180 L50,280 M60,180 L60,260" fill="none" stroke="white" stroke-width="0.8" stroke-opacity="0.1" stroke-dasharray="5,3,1,3"/>
+    
+    <!-- Elementos geométricos -->
+    <circle cx="90" cy="90" r="20" fill="none" stroke="white" stroke-width="0.5" stroke-opacity="0.15"/>
+    <circle cx="90" cy="90" r="10" fill="none" stroke="white" stroke-width="0.5" stroke-opacity="0.2"/>
+    
+    <!-- Extensão horizontal -->
+    <path d="M150,40 L300,40 M150,50 L280,50 M150,60 L260,60" fill="none" stroke="white" stroke-width="0.5" stroke-opacity="0.1" stroke-dasharray="10,5,2,5"/>
+    
+    <!-- Glitch fragmentado -->
+    <path d="M70,40 L100,15 L130,40" fill="none" stroke="white" stroke-width="0.8" stroke-opacity="0.15" filter="url(#strongGlitch)"/>
+  </g>
+  
+  <!-- Elementos de moldura - Canto Inferior Esquerdo -->
+  <g opacity="0.8" filter="url(#glitchFilter)" transform="translate(0,1024) scale(1,-1)">
+    <!-- Elemento principal do canto -->
+    <path d="M40,40 L150,40 L40,150 Z" fill="none" stroke="white" stroke-width="1.5" stroke-opacity="0.15"/>
+    
+    <!-- Runa interna -->
+    <path d="M60,60 L120,60 L90,90 Z" fill="none" stroke="white" stroke-width="1" stroke-opacity="0.2"/>
+    
+    <!-- Linhas de código rúnico -->
+    <path d="M40,180 L40,300 M50,180 L50,280 M60,180 L60,260" fill="none" stroke="white" stroke-width="0.8" stroke-opacity="0.1" stroke-dasharray="5,3,1,3"/>
+    
+    <!-- Elementos geométricos -->
+    <circle cx="90" cy="90" r="20" fill="none" stroke="white" stroke-width="0.5" stroke-opacity="0.15"/>
+    <circle cx="90" cy="90" r="10" fill="none" stroke="white" stroke-width="0.5" stroke-opacity="0.2"/>
+    
+    <!-- Extensão horizontal -->
+    <path d="M150,40 L300,40 M150,50 L280,50 M150,60 L260,60" fill="none" stroke="white" stroke-width="0.5" stroke-opacity="0.1" stroke-dasharray="10,5,2,5"/>
+    
+    <!-- Glitch fragmentado -->
+    <path d="M70,40 L100,15 L130,40" fill="none" stroke="white" stroke-width="0.8" stroke-opacity="0.15" filter="url(#strongGlitch)"/>
+  </g>
+  
+  <!-- Elementos de moldura - Canto Inferior Direito -->
+  <g opacity="0.8" filter="url(#glitchFilter)" transform="translate(1024,1024) scale(-1,-1)">
+    <!-- Elemento principal do canto -->
+    <path d="M40,40 L150,40 L40,150 Z" fill="none" stroke="white" stroke-width="1.5" stroke-opacity="0.15"/>
+    
+    <!-- Runa interna -->
+    <path d="M60,60 L120,60 L90,90 Z" fill="none" stroke="white" stroke-width="1" stroke-opacity="0.2"/>
+    
+    <!-- Linhas de código rúnico -->
+    <path d="M40,180 L40,300 M50,180 L50,280 M60,180 L60,260" fill="none" stroke="white" stroke-width="0.8" stroke-opacity="0.1" stroke-dasharray="5,3,1,3"/>
+    
+    <!-- Elementos geométricos -->
+    <circle cx="90" cy="90" r="20" fill="none" stroke="white" stroke-width="0.5" stroke-opacity="0.15"/>
+    <circle cx="90" cy="90" r="10" fill="none" stroke="white" stroke-width="0.5" stroke-opacity="0.2"/>
+    
+    <!-- Extensão horizontal -->
+    <path d="M150,40 L300,40 M150,50 L280,50 M150,60 L260,60" fill="none" stroke="white" stroke-width="0.5" stroke-opacity="0.1" stroke-dasharray="10,5,2,5"/>
+    
+    <!-- Glitch fragmentado -->
+    <path d="M70,40 L100,15 L130,40" fill="none" stroke="white" stroke-width="0.8" stroke-opacity="0.15" filter="url(#strongGlitch)"/>
+  </g>
+  
+  <!-- Elementos de conexão entre cantos - com distorções -->
+  <g opacity="0.6" filter="url(#scanlines)">
+    <!-- Linhas conectoras horizontais superiores -->
+    <path d="M200,60 L824,60" fill="none" stroke="white" stroke-width="0.8" stroke-opacity="0.1" stroke-dasharray="20,10,5,10,2,10" />
+    
+    <!-- Linhas conectoras horizontais inferiores -->
+    <path d="M200,964 L824,964" fill="none" stroke="white" stroke-width="0.8" stroke-opacity="0.1" stroke-dasharray="20,10,5,10,2,10" />
+    
+    <!-- Linhas conectoras verticais esquerdas -->
+    <path d="M60,200 L60,824" fill="none" stroke="white" stroke-width="0.8" stroke-opacity="0.1" stroke-dasharray="20,10,5,10,2,10" />
+    
+    <!-- Linhas conectoras verticais direitas -->
+    <path d="M964,200 L964,824" fill="none" stroke="white" stroke-width="0.8" stroke-opacity="0.1" stroke-dasharray="20,10,5,10,2,10" />
+  </g>
+  
+  <!-- Símbolos tribais ao longo das bordas -->
+  <g opacity="0.7">
+    <!-- Superior -->
+    <path d="M412,40 L462,40 L437,65 Z" fill="none" stroke="white" stroke-width="0.7" stroke-opacity="0.15" filter="url(#glitchFilter)"/>
+    <path d="M562,40 L612,40 L587,65 Z" fill="none" stroke="white" stroke-width="0.7" stroke-opacity="0.15" filter="url(#glitchFilter)"/>
+    
+    <!-- Inferior -->
+    <path d="M412,984 L462,984 L437,959 Z" fill="none" stroke="white" stroke-width="0.7" stroke-opacity="0.15" filter="url(#glitchFilter)"/>
+    <path d="M562,984 L612,984 L587,959 Z" fill="none" stroke="white" stroke-width="0.7" stroke-opacity="0.15" filter="url(#glitchFilter)"/>
+    
+    <!-- Esquerda -->
+    <path d="M40,412 L40,462 L65,437 Z" fill="none" stroke="white" stroke-width="0.7" stroke-opacity="0.15" filter="url(#glitchFilter)"/>
+    <path d="M40,562 L40,612 L65,587 Z" fill="none" stroke="white" stroke-width="0.7" stroke-opacity="0.15" filter="url(#glitchFilter)"/>
+    
+    <!-- Direita -->
+    <path d="M984,412 L984,462 L959,437 Z" fill="none" stroke="white" stroke-width="0.7" stroke-opacity="0.15" filter="url(#glitchFilter)"/>
+    <path d="M984,562 L984,612 L959,587 Z" fill="none" stroke="white" stroke-width="0.7" stroke-opacity="0.15" filter="url(#glitchFilter)"/>
+  </g>
+  
+  <!-- Símbolos de selamento nos cantos -->
+  <g opacity="0.9">
+    <!-- Superior Esquerdo -->
+    <circle cx="90" cy="90" r="5" fill="white" fill-opacity="0.2" filter="url(#strongGlitch)"/>
+    
+    <!-- Superior Direito -->
+    <circle cx="934" cy="90" r="5" fill="white" fill-opacity="0.2" filter="url(#strongGlitch)"/>
+    
+    <!-- Inferior Esquerdo -->
+    <circle cx="90" cy="934" r="5" fill="white" fill-opacity="0.2" filter="url(#strongGlitch)"/>
+    
+    <!-- Inferior Direito -->
+    <circle cx="934" cy="934" r="5" fill="white" fill-opacity="0.2" filter="url(#strongGlitch)"/>
+  </g>
+  
+  <!-- Linhas de conexão diagonais fragmentadas -->
+  <g opacity="0.5" filter="url(#scanlines)">
+    <path d="M100,100 L200,200" fill="none" stroke="white" stroke-width="0.5" stroke-opacity="0.07" stroke-dasharray="5,10"/>
+    <path d="M924,100 L824,200" fill="none" stroke="white" stroke-width="0.5" stroke-opacity="0.07" stroke-dasharray="5,10"/>
+    <path d="M100,924 L200,824" fill="none" stroke="white" stroke-width="0.5" stroke-opacity="0.07" stroke-dasharray="5,10"/>
+    <path d="M924,924 L824,824" fill="none" stroke="white" stroke-width="0.5" stroke-opacity="0.07" stroke-dasharray="5,10"/>
+  </g>
+  
+  <!-- Elementos de código digitais nos cantos -->
+  <g opacity="0.3">
+    <rect x="20" y="20" width="120" height="120" fill="url(#codePattern)" fill-opacity="0.07"/>
+    <rect x="884" y="20" width="120" height="120" fill="url(#codePattern)" fill-opacity="0.07"/>
+    <rect x="20" y="884" width="120" height="120" fill="url(#codePattern)" fill-opacity="0.07"/>
+    <rect x="884" y="884" width="120" height="120" fill="url(#codePattern)" fill-opacity="0.07"/>
+  </g>
+  
+  <!-- Círculos centrais marcadores espaciais -->
+  <g opacity="0.4" filter="url(#scanlines)">
+    <circle cx="512" cy="512" r="300" fill="none" stroke="white" stroke-width="0.2" stroke-opacity="0.03" stroke-dasharray="1,20"/>
+    <circle cx="512" cy="512" r="350" fill="none" stroke="white" stroke-width="0.2" stroke-opacity="0.02" stroke-dasharray="1,30"/>
+    <circle cx="512" cy="512" r="400" fill="none" stroke="white" stroke-width="0.2" stroke-opacity="0.01" stroke-dasharray="1,40"/>
+  </g>
+  
+  <!-- Efeito de falha vertical principal -->
+  <g opacity="0.6" filter="url(#scanlines)">
+    <rect x="0" y="0" width="1024" height="1024" fill="white" fill-opacity="0.01"/>
+  </g>
+  
+  <!-- Rachaduras Digitais -->
+  <g opacity="0.7" filter="url(#strongGlitch)">
+    <path d="M70,70 L220,170 M934,70 L784,170 M70,934 L220,834 M934,934 L784,834" fill="none" stroke="white" stroke-width="0.3" stroke-opacity="0.1"/>
+  </g>
+</svg>

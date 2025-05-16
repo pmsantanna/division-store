@@ -1,0 +1,32 @@
+<section class="feedback-section">
+  <h2 class="feedback-title">LET CUSTOMERS SPEAK FOR US</h2>
+
+  <div class="feedback-list">
+    <div class="feedback-card" *ngFor="let fb of feedbacks">
+
+      <div class="feedback-img-wrapper">
+        <img [src]="fb.imagem" alt="Feedback image" class="feedback-img" />
+      </div>
+
+      <div class="feedback-content">
+
+        <div class="feedback-meta">
+          <div class="stars">
+            <ng-container *ngFor="let star of getFullStars(fb.nota); let i = index">
+              <span class="star full">★</span>
+            </ng-container>
+            <span *ngIf="hasHalfStar(fb.nota)" class="star half">☆</span>
+          </div>
+          <div class="date">{{ fb.data }}</div>
+        </div>
+
+        <h3 class="feedback-headline">{{ fb.titulo }}</h3>
+        <p class="feedback-text">{{ fb.texto }}</p>
+        <p class="feedback-user">{{ fb.nome }}
+          <span>//</span>
+        </p>
+
+      </div>
+    </div>
+  </div>
+</section>
