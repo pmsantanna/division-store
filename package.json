@@ -7,7 +7,7 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "deploy:pages:ssr": "ng build --configuration production && rimraf docs-temp && xcopy /E /I /Y docs\\browser docs-temp && rimraf docs && mkdir docs && xcopy /E /I /Y docs-temp docs && xcopy 404.html docs\\404.html /Y && rimraf docs-temp && git add . && git commit -m \"deploy: GitHub Pages (SSR)\" && git push"
+    "deploy:pages:ssr": "ng build --configuration production && rimraf docs-temp && xcopy /E /I /Y docs\\browser docs-temp && rimraf docs && mkdir docs && xcopy /E /I /Y docs-temp docs && copy \"404.html\" \"docs\\404.html\" && rimraf docs-temp && git add . && git commit -m \"deploy: GitHub Pages (SSR)\" && git push"
   },
   "private": true,
   "dependencies": {

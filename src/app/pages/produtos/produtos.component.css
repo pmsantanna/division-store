@@ -82,8 +82,6 @@
 }
 
 .banner-principal {
-  background: url("/assets/img/banner-cybertribal.png") center center / cover
-    no-repeat;
   height: 80vh;
   min-height: 500px;
   padding: 60px 20px;
@@ -169,8 +167,6 @@
   left: 50%;
   width: 1200px;
   height: 1200px;
-  background: url("/assets/img/tribal-seal.svg") center center / contain
-    no-repeat;
   transform: translate(-50%, -50%);
   opacity: 0.9;
   z-index: 1;
