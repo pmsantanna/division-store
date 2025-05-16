@@ -1,0 +1,20 @@
+<section class="galeria-section py-5">
+  <div class="container">
+    <h2 class="galeria-title text-center mb-5">RITUAIS EM IMAGENS</h2>
+
+    <div class="galeria-composicao">
+      <!-- Grid principal 2x2 -->
+      <div class="galeria-principal">
+        <img *ngFor="let img of imagensPrincipais" [src]="img" class="galeria-img grande" />
+      </div>
+
+      <div class="galeria-lateral" #slider (mouseenter)="hoverAtivo = true" (mouseleave)="hoverAtivo = false">
+        <ng-container *ngFor="let img of imagensDuplicadas">
+          <img [src]="img" class="galeria-img pequena" />
+        </ng-container>
+      </div>
+
+
+    </div>
+  </div>
+</section>
