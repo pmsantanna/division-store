@@ -146,7 +146,6 @@
 .grain-overlay {
   position: absolute;
   inset: 0;
-  background: url("/assets/img/noise-grain.gif") repeat;
   opacity: 0.3;
   z-index: 1;
   pointer-events: none;

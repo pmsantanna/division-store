@@ -22,3 +22,7 @@ h3,
   background: url("assets/img/banner-cybertribal.png") center center / cover
     no-repeat;
 }
+
+.grain-overlay {
+  background: url("/assets/img/noise-grain.gif") repeat;
+}
