@@ -1,7 +1,6 @@
 <div class="viewer-backdrop" (click)="fecharViewer()">
   <div class="viewer-content" (click)="$event.stopPropagation()">
-    <img [src]="imagemAtual" [class.glitch-out]="glitchOut" class="viewer-img" />
-
+    <img [src]="imagemVisivel" class="viewer-img" [class.glitch-out]="glitchOut" />
     <button class="fechar-btn glitch-close-btn" (click)="fecharViewer()">×</button>
     <button class="nav-btn nav-esquerda" (click)="imagemAnterior()">‹</button>
     <button class="nav-btn nav-direita" (click)="proximaImagem()">›</button>

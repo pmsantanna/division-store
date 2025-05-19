@@ -4,6 +4,7 @@ import {
   Output,
   EventEmitter,
   HostListener,
+  OnInit,
 } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
@@ -14,34 +15,46 @@ import { CommonModule } from '@angular/common';
   templateUrl: './image-viewer.component.html',
   styleUrls: ['./image-viewer.component.css'],
 })
-export class ImageViewerComponent {
+export class ImageViewerComponent implements OnInit {
   @Input() imagens: string[] = [];
   @Input() imagemAtual: string = '';
   @Output() fechar = new EventEmitter<void>();
 
-  glitchOut: boolean = true;
+  imagemVisivel: string = '';
+  glitchOut: boolean = false;
+  imagemInicial: boolean = true;
+
+  ngOnInit() {
+    this.imagemVisivel = this.imagemAtual;
+  }
 
   get indexAtual(): number {
     return this.imagens.indexOf(this.imagemAtual);
   }
 
-  proximaImagem() {
+  trocarImagem(proxima: boolean) {
+    if (this.imagens.length === 0) return;
+
     this.glitchOut = true;
+
     setTimeout(() => {
-      const proximo = (this.indexAtual + 1) % this.imagens.length;
-      this.imagemAtual = this.imagens[proximo];
+      const idx = this.indexAtual;
+      const novoIdx = proxima
+        ? (idx + 1) % this.imagens.length
+        : (idx - 1 + this.imagens.length) % this.imagens.length;
+
+      this.imagemAtual = this.imagens[novoIdx];
+      this.imagemVisivel = this.imagemAtual;
       this.glitchOut = false;
-    }, 150);
+    }, 150); // tempo do efeito glitch-out
+  }
+
+  proximaImagem() {
+    this.trocarImagem(true);
   }
 
   imagemAnterior() {
-    this.glitchOut = true;
-    setTimeout(() => {
-      const anterior =
-        (this.indexAtual - 1 + this.imagens.length) % this.imagens.length;
-      this.imagemAtual = this.imagens[anterior];
-      this.glitchOut = false;
-    }, 150);
+    this.trocarImagem(false);
   }
 
   fecharViewer() {

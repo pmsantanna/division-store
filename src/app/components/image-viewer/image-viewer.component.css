@@ -146,6 +146,7 @@
 
 .viewer-img.glitch-out {
   opacity: 0;
-  filter: contrast(300%) brightness(2);
-  transform: scale(1.02);
+  transform: scale(1.04);
+  filter: brightness(2.5) contrast(2.2) saturate(1.8);
+  box-shadow: 0 0 30px #ff00ff88, 0 0 60px #00fff055;
 }
