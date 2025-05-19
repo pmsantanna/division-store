@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg viewBox="0 0 800 800" xmlns="http://www.w3.org/2000/svg">
+  <!-- Fundo transparente -->
+  
+  <!-- Círculo externo principal -->
+  <circle cx="400" cy="400" r="380" fill="none" stroke="black" stroke-width="4"/>
+  <circle cx="400" cy="400" r="370" fill="none" stroke="black" stroke-width="2"/>
+  
+  <!-- Geometria sagrada - Flor da vida parcial -->
+  <g opacity="0.9">
+    <circle cx="400" cy="400" r="320" fill="none" stroke="black" stroke-width="2"/>
+    <circle cx="400" cy="230" r="150" fill="none" stroke="black" stroke-width="1.5"/>
+    <circle cx="530" cy="315" r="150" fill="none" stroke="black" stroke-width="1.5"/>
+    <circle cx="530" cy="485" r="150" fill="none" stroke="black" stroke-width="1.5"/>
+    <circle cx="400" cy="570" r="150" fill="none" stroke="black" stroke-width="1.5"/>
+    <circle cx="270" cy="485" r="150" fill="none" stroke="black" stroke-width="1.5"/>
+    <circle cx="270" cy="315" r="150" fill="none" stroke="black" stroke-width="1.5"/>
+  </g>
+  
+  <!-- Símbolos tribais/ocultistas -->
+  <path d="M400 100 L420 140 L460 120 L450 165 L490 180 L450 195 L460 240 L420 220 L400 260 L380 220 L340 240 L350 195 L310 180 L350 165 L340 120 L380 140 Z" fill="none" stroke="black" stroke-width="2"/>
+  <path d="M400 540 L420 580 L460 560 L450 605 L490 620 L450 635 L460 680 L420 660 L400 700 L380 660 L340 680 L350 635 L310 620 L350 605 L340 560 L380 580 Z" fill="none" stroke="black" stroke-width="2"/>
+  
+  <!-- Circuitos e runas digitais - Elementos angulares -->
+  <g>
+    <!-- Circuitos na borda externa -->
+    <path d="M150 400 L190 400 M190 400 L220 400 L220 420 L240 420 L240 390 L260 390" fill="none" stroke="black" stroke-width="3"/>
+    <path d="M650 400 L610 400 M610 400 L580 400 L580 420 L560 420 L560 390 L540 390" fill="none" stroke="black" stroke-width="3"/>
+    
+    <!-- Runas digitais -->
+    <path d="M350 130 L380 130 L380 150 L350 150 L350 130 Z" fill="black"/>
+    <path d="M420 130 L450 130 L450 150 L420 150 L420 130 Z" fill="black"/>
+    <path d="M350 650 L380 650 L380 670 L350 670 L350 650 Z" fill="black"/>
+    <path d="M420 650 L450 650 L450 670 L420 670 L420 650 Z" fill="black"/>
+    
+    <!-- Elementos glitch -->
+    <g>
+      <path d="M280 290 L340 290 L340 280 L320 280 L320 270 L350 270 L350 300 L280 300 Z" fill="black"/>
+      <path d="M450 290 L510 290 L510 280 L490 280 L490 270 L520 270 L520 300 L450 300 Z" fill="black"/>
+      <path d="M280 510 L340 510 L340 500 L320 500 L320 490 L350 490 L350 520 L280 520 Z" fill="black"/>
+      <path d="M450 510 L510 510 L510 500 L490 500 L490 490 L520 490 L520 520 L450 520 Z" fill="black"/>
+    </g>
+    
+    <!-- Linhas glitch quebradas -->
+    <path d="M230 230 L250 230 L250 240 L270 240 L270 230 L290 230" stroke="black" stroke-width="2" fill="none"/>
+    <path d="M570 230 L550 230 L550 240 L530 240 L530 230 L510 230" stroke="black" stroke-width="2" fill="none"/>
+    <path d="M230 570 L250 570 L250 560 L270 560 L270 570 L290 570" stroke="black" stroke-width="2" fill="none"/>
+    <path d="M570 570 L550 570 L550 560 L530 560 L530 570 L510 570" stroke="black" stroke-width="2" fill="none"/>
+  </g>
+  
+  <!-- Mandala central brutalista -->
+  <g>
+    <!-- Círculo central com quebras -->
+    <path d="M400 250 A150 150 0 0 1 530 315 M530 315 A150 150 0 0 1 530 485 M530 485 A150 150 0 0 1 400 550 M400 550 A150 150 0 0 1 270 485 M270 485 A150 150 0 0 1 270 315 M270 315 A150 150 0 0 1 400 250" stroke="black" stroke-width="4" fill="none"/>
+    
+    <!-- Hexagrama central -->
+    <path d="M400 300 L450 380 L400 460 L350 380 Z" fill="none" stroke="black" stroke-width="3"/>
+    <path d="M350 380 L400 320 L450 380 L400 440 Z" fill="none" stroke="black" stroke-width="3"/>
+    
+    <!-- Ponto central -->
+    <circle cx="400" cy="380" r="15" fill="black"/>
+  </g>
+  
+  <!-- Texto rúnico circular -->
+  <g>
+    <path id="textPath" d="M400,110 A290,290 0 1,1 399,110" fill="none"/>
+    <text font-family="monospace" font-size="16" letter-spacing="10">
+      <textPath href="#textPath" textLength="1810">
+        // 01110010 01101001 01110100 01110101 01100001 01101100 // 01100100 01101001 01100111 01101001 01110100 01100001 01101100 //
+      </textPath>
+    </text>
+  </g>
+  
+  <!-- Anéis de conexão com ruídos digitais -->
+  <circle cx="400" cy="400" r="290" stroke="black" stroke-width="1.5" stroke-dasharray="8,4,2,4" fill="none"/>
+  <circle cx="400" cy="400" r="260" stroke="black" stroke-width="1" stroke-dasharray="1,2" fill="none"/>
+  <circle cx="400" cy="400" r="210" stroke="black" stroke-width="1.5" fill="none"/>
+  
+  <!-- Elementos de circuito radiais -->
+  <g>
+    <path d="M400 190 L400 210 M400 210 C410 210, 410 220, 400 220 M400 220 L400 240" stroke="black" stroke-width="2.5" fill="none"/>
+    <path d="M400 560 L400 540 M400 540 C390 540, 390 530, 400 530 M400 530 L400 510" stroke="black" stroke-width="2.5" fill="none"/>
+    <path d="M190 400 L210 400 M210 400 C210 410, 220 410, 220 400 M220 400 L240 400" stroke="black" stroke-width="2.5" fill="none"/>
+    <path d="M610 400 L590 400 M590 400 C590 390, 580 390, 580 400 M580 400 L560 400" stroke="black" stroke-width="2.5" fill="none"/>
+    
+    <!-- Conectores diagonais -->
+    <path d="M260 260 L280 280 M280 280 C285 285, 295 285, 300 280 M300 280 L320 260" stroke="black" stroke-width="1.5" fill="none"/>
+    <path d="M540 260 L520 280 M520 280 C515 285, 505 285, 500 280 M500 280 L480 260" stroke="black" stroke-width="1.5" fill="none"/>
+    <path d="M260 540 L280 520 M280 520 C285 515, 295 515, 300 520 M300 520 L320 540" stroke="black" stroke-width="1.5" fill="none"/>
+    <path d="M540 540 L520 520 M520 520 C515 515, 505 515, 500 520 M500 520 L480 540" stroke="black" stroke-width="1.5" fill="none"/>
+  </g>
+  
+  <!-- Marcas de ângulo -->
+  <g>
+    <path d="M400 100 L400 110 L410 110" stroke="black" stroke-width="2" fill="none"/>
+    <path d="M400 700 L400 690 L390 690" stroke="black" stroke-width="2" fill="none"/>
+    <path d="M100 400 L110 400 L110 410" stroke="black" stroke-width="2" fill="none"/>
+    <path d="M700 400 L690 400 L690 390" stroke="black" stroke-width="2" fill="none"/>
+  </g>
+  
+  <!-- Rachaduras glitch estratégicas -->
+  <g>
+    <path d="M360 150 L355 160 L365 170 L360 180 L370 190" stroke="black" stroke-width="1.5" fill="none"/>
+    <path d="M440 150 L445 160 L435 170 L440 180 L430 190" stroke="black" stroke-width="1.5" fill="none"/>
+    <path d="M360 650 L355 640 L365 630 L360 620 L370 610" stroke="black" stroke-width="1.5" fill="none"/>
+    <path d="M440 650 L445 640 L435 630 L440 620 L430 610" stroke="black" stroke-width="1.5" fill="none"/>
+  </g>
+</svg>
